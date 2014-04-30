@@ -1,0 +1,28 @@
+{
+  "name": "jsony",
+  "version": "0.0.0",
+  "description": "A small CSV to JSON converter",
+  "main": "convert.js",
+  "dependencies": {
+    "underscore": "~1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node convert.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mulderp/jsony.git"
+  },
+  "keywords": [
+    "csv",
+    "json",
+    "converter"
+  ],
+  "author": "Patrick Mulder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mulderp/jsony/issues"
+  },
+  "homepage": "https://github.com/mulderp/jsony"
+}
