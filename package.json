@@ -1,6 +1,6 @@
 {
   "name": "jsony",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A small CSV to JSON converter",
   "main": "index.js",
   "bin": {
