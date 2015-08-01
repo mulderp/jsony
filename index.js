@@ -2,21 +2,17 @@ var fs = require('fs');
 var _ = require('underscore');
 var JSONy = function() {};
 
-// step 1
-// JSONy.load = function(filename) {
-//   fs.readFile(filename, function(e, data) {
-//     var row = data.toString();
-//     console.log(row);
-//   });
-// }
+// some config options
+JSONy.HEAD = 1; // parse first line as header
+JSONy.lineSeparator = '\n';
+JSONy.fieldSeparator = ';';
 
-// step 2
 JSONy.load = function(filename, cb) {
   fs.readFile(filename, cb);
 }
 
 function _extractRows(raw) {
-  return raw.toString().split('\n')
+  return raw.toString().split(JSON.lineSeparator);
 }
 
 function _trimArray(array) {
@@ -24,9 +20,10 @@ function _trimArray(array) {
 }
 
 function _splitFields(line) {
-  return _trimArray(line.split(';'));
+  return _trimArray(line.split(JSONy.fieldSeparator));
 }
 
+// results are stored in an array
 var out = [];
 function convert(e, raw, cb) {
 
@@ -59,7 +56,6 @@ function convert(e, raw, cb) {
   cb(e, out);
 }
 
-JSONy.HEAD = 1; // use first line as header
 JSONy.convert = convert;
 
 module.exports = JSONy
