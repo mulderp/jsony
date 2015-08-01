@@ -12,7 +12,7 @@ JSONy.load = function(filename, cb) {
 }
 
 function _extractRows(raw) {
-  return raw.toString().split(JSON.lineSeparator);
+  return raw.toString().split(JSONy.lineSeparator);
 }
 
 function _trimArray(array) {
